@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "490709848310",
+    "firebase_url": "https://finance-book-4ca4d.firebaseio.com",
+    "project_id": "finance-book-4ca4d",
+    "storage_bucket": "finance-book-4ca4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490709848310:android:e39f93da6ecfc8886f9cd7",
+        "android_client_info": {
+          "package_name": "com.finance.fbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490709848310-gnrjs11prcuvnjpv4vigcd0l7jv89k8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finance.fbook",
+            "certificate_hash": "ff9bd0b0b13921c676dbf925d4a7d325769f2570"
+          }
+        },
+        {
+          "client_id": "490709848310-k4bffdsmp2kvtsig5shi2bk2me2qss20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtiQihEdUsBO1zidPDFwh5hqLfC4WjfLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490709848310-k4bffdsmp2kvtsig5shi2bk2me2qss20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
