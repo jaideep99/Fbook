@@ -7,7 +7,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TableLayout;
 import android.widget.Toast;
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabs;
     private ViewPager pager;
-
+    private ImageView addcust,notes;
     FragmentAdapter adapter;
 
     @Override
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         tabs = (TabLayout) findViewById(R.id.tabs);
         pager = (ViewPager) findViewById(R.id.viewpager);
+        addcust = (ImageView) findViewById(R.id.addc);
+        notes = (ImageView) findViewById(R.id.notes);
 
 
         adapter = new FragmentAdapter(getSupportFragmentManager(),MainActivity.this);
@@ -39,5 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
         tabs.getTabAt(0).setIcon(R.drawable.home);
         tabs.getTabAt(1).setIcon(R.drawable.more);
+
+        notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,ContactActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
