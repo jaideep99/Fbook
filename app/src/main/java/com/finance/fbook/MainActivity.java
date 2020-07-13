@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         tabs.getTabAt(0).setIcon(R.drawable.home);
         tabs.getTabAt(1).setIcon(R.drawable.more);
 
-        notes.setOnClickListener(new View.OnClickListener() {
+        addcust.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this,ContactActivity.class);

@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:id="@+id/toolbar"
-        app:title="Request Money From Contacts"
+        app:title="Add Customer"
         app:titleTextColor="#fff"
         app:titleMarginStart="20dp"
+        app:titleTextAppearance="@style/TitleBarTextAppearance"
         >
     </androidx.appcompat.widget.Toolbar>
 

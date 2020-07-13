@@ -27,16 +27,31 @@
             android:fontFamily="@font/poppins_semibold"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shaik Khalil"
-        android:textSize="18sp"
-        android:layout_marginLeft="16dp"
-        android:textColor="#000000"
-        android:fontFamily="@font/poppins"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shaik Khalil"
+                android:textSize="17sp"
+                android:layout_marginLeft="16dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins"/>
 
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+91 6300040845"
+                android:textSize="13sp"
+                android:layout_marginLeft="16dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <View

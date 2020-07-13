@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="Edit"
                 android:paddingLeft="16dp"
+                android:id="@+id/editname"
                 android:paddingRight="16dp"
                 android:layout_marginLeft="16dp"
                 android:background="@drawable/bring"
