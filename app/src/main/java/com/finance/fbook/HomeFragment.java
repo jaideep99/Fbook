@@ -28,21 +28,28 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static android.content.Context.MODE_PRIVATE;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements ContactAdapter.OnItemClickListener{
 
     private RecyclerView recycler;
     private SearchView searchbar;
     private ContactAdapter adapter;
     private LinearLayoutManager manager;
-    List<String> contacts = new ArrayList<String>();
+    List<icontact> contacts = new ArrayList<icontact>();
 
 
     public HomeFragment() {
@@ -57,22 +64,54 @@ public class HomeFragment extends Fragment {
         recycler = (RecyclerView) rootview.findViewById(R.id.recycler);
         searchbar = (SearchView) rootview.findViewById(R.id.search);
 
-        contacts.add("Shaik Khalil");
-        contacts.add("Varshith Bumble");
-        contacts.add("Jaideep Reddy");
-        contacts.add("Guru");
+
 
         manager = new LinearLayoutManager(getActivity().getApplicationContext());
         recycler.setLayoutManager(manager);
 
         adapter = new ContactAdapter(contacts);
+        adapter.setOnItemClickListener(this);
         recycler.setAdapter(adapter);
+
+        
+        retrieve_data();
 
 
         return rootview;
     }
 
+    private void retrieve_data() {
+
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference root = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Customers");
+
+        root.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot ds : snapshot.getChildren())
+                {
+                    HashMap<String,String> x = (HashMap) ds.getValue();
+                    contacts.add(new icontact(x.get("name"),x.get("number"),ds.getKey()));
+                }
+
+                adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 
 
-
+    @Override
+    public void onItemClick(int pos) {
+        Intent i =  new Intent(getActivity().getApplicationContext(),CustomerActivity.class);
+        i.putExtra("contact", (Serializable) contacts.get(pos));
+        startActivity(i);
+    }
 }

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_margin="20dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="12dp"
+    android:background="@drawable/wround"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Back"
+        android:id="@+id/back"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_semibold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Amount"
+        android:textSize="24sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="6dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹"
+            android:textSize="26sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/green"
+            />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="Ex : 2000"
+        android:id="@+id/amount"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/desc"
+        android:hint="Description"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="10dp"
+        android:maxLines="2"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wround"
+            android:padding="2dp"
+            android:id="@+id/calender"
+            android:layout_alignParentStart="true"
+            android:elevation="2dp">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/calender"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="12 Jul 2020 . 1:28 AM"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp"
+            android:id="@+id/date"
+            android:layout_marginEnd="6dp"
+            android:textColor="#000"/>
+    </RelativeLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Interest"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="18sp"
+        android:id="@+id/checkbox"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/iwrapper"
+        android:visibility="gone"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Interest Rate"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"
+                android:layout_weight="0.5"
+                android:textColor="#000"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:hint="3"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:id="@+id/interest_rate"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"
+                android:layout_weight="0.5"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:id="@+id/time_spinner"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bround"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="24dp"
+            android:paddingLeft="24dp"/>
+    </LinearLayout>
+</LinearLayout>

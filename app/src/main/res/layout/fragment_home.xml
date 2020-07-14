@@ -42,7 +42,7 @@
                         android:text="₹500"
                         android:id="@+id/give"
                         android:textSize="24sp"
-                        android:textColor="#00a300"
+                        android:textColor="@color/green"
                         android:fontFamily="@font/poppins_semibold"/>
 
                     <TextView
@@ -73,7 +73,7 @@
                         android:text="₹2000"
                         android:id="@+id/get"
                         android:textSize="24sp"
-                        android:textColor="#ee1111"
+                        android:textColor="@color/red"
                         android:fontFamily="@font/poppins_semibold"/>
 
                     <TextView
@@ -98,20 +98,23 @@
         android:layout_weight="0.7"
         android:weightSum="10">
 
-        <SearchView
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/search"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent"/>
+            android:text="Your Customers"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="10"/>
 
         <View

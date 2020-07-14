@@ -2,14 +2,15 @@ package com.finance.fbook;
 
 import java.io.Serializable;
 
-public class contact implements Serializable {
+public class icontact implements Serializable {
 
-    String name,number;
+    String name,number,uid;
 
-    public contact(String name,String number)
+    public icontact(String name, String number, String id)
     {
         this.name = name;
         this.number = number;
+        this.uid = id;
     }
 
     public String getName() {
@@ -26,5 +27,13 @@ public class contact implements Serializable {
 
     public String getNumber() {
         return number;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

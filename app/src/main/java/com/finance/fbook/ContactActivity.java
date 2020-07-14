@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -124,7 +125,7 @@ public class ContactActivity extends AppCompatActivity implements ContactItemAda
                         String phoneNo = pCur.getString(pCur.getColumnIndex(
                                 ContactsContract.CommonDataKinds.Phone.NUMBER));
                         contacts.add(new contact(name,phoneNo));
-
+                        break;
                     }
                     pCur.close();
                 }
@@ -159,7 +160,12 @@ public class ContactActivity extends AppCompatActivity implements ContactItemAda
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference root = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Customers");
-        root.push().setValue(customer);
+        DatabaseReference ref = root.push();
+        ref.setValue(customer);
+        Intent i =  new Intent(ContactActivity.this,CustomerActivity.class);
+        icontact temp = new icontact(customer.getName(),customer.getNumber(),ref.getKey());
+        i.putExtra("contact", (Serializable) temp);
+        startActivity(i);
 
     }
 }
