@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PrincipalFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.07"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:layout_margin="8dp"
+        android:background="@drawable/bring">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:fontFamily="@font/poppins"
+            android:text="Total Principal Amount"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="₹ 0"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins"
+            android:id="@+id/total"
+            android:layout_marginRight="8dp"
+            />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.83"
+        android:id="@+id/recycler"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:padding="16dp"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/red"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingLeft="28dp"
+                android:paddingTop="4dp"
+                android:paddingRight="28dp"
+                android:paddingBottom="4dp"
+                android:text="Pay ₹"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.5">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Got ₹"
+                android:id="@+id/got"
+                android:textSize="18sp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/poppins_medium"
+                android:background="@drawable/green"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

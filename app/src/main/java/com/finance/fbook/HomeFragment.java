@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ public class HomeFragment extends Fragment implements ContactAdapter.OnItemClick
     private SearchView searchbar;
     private ContactAdapter adapter;
     private LinearLayoutManager manager;
+    ProgressBar progressBar;
     List<icontact> contacts = new ArrayList<icontact>();
 
 
@@ -63,7 +65,7 @@ public class HomeFragment extends Fragment implements ContactAdapter.OnItemClick
 
         recycler = (RecyclerView) rootview.findViewById(R.id.recycler);
         searchbar = (SearchView) rootview.findViewById(R.id.search);
-
+        progressBar = (ProgressBar) rootview.findViewById(R.id.progress);
 
 
         manager = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -96,7 +98,7 @@ public class HomeFragment extends Fragment implements ContactAdapter.OnItemClick
                 }
 
                 adapter.notifyDataSetChanged();
-
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override

@@ -97,8 +97,10 @@
         android:orientation="vertical"
         android:layout_weight="0.7"
         android:weightSum="10">
-
-
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,8 +110,19 @@
             android:fontFamily="@font/poppins_bold"
             android:paddingLeft="10dp"
             android:paddingTop="4dp"
-            android:paddingBottom="4dp"/>
+            android:paddingBottom="4dp"
+            android:layout_alignParentStart="true"/>
 
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="6dp"
+                android:indeterminate="true"
+                style="@style/progressbar" />
+        </RelativeLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"

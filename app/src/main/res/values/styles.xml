@@ -19,4 +19,13 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="progressbar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:colorAccent">@color/colorPrimary</item>
+    </style>
 </resources>
+
